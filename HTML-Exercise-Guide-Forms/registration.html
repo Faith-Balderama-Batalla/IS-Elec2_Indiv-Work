@@ -18,7 +18,7 @@
         <button type="button"id="jqToggle">Show/Hide</button><br><br>
 
         <label for="pwd2">Confirm Password:</label>
-        <input type="password" id="pwd2" placeholder="Confirm password">
+        <input type="password" id="pwd2" placeholder="Confirm password" required>
        <!-- <button type="button" id="jqToggle">Show</button>--><br><br>
 
         <label>Gender:</label>
@@ -66,10 +66,15 @@
             else { $("#email").removeClass("error"); }
         if($("#pwd").val()===""){ $("#pwd").addClass("error"); valid=false; } 
             else { $("#pwd").removeClass("error"); }
-    
+        if($("#pwd2").val()===""){ $("#pwd2").addClass("error"); valid=false; } 
+            else { $("#pwd2").removeClass("error"); }
+
       if(!valid){
         alert("All required fields must be filled!");
         e.preventDefault();
+      }
+      else {
+        alert("Form submitted!");
       }
     });
     </script>
