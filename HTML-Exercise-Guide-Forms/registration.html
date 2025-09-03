@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form id= "RegisterForm">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="pwd" name="password" placeholder="Enter password" required minlength="4" max="10">
+        <button type="button"id="jqToggle">Show/Hide</button><br><br>
+
+        <label for="pwd2">Confirm Password:</label>
+        <input type="password" id="pwd2" placeholder="Confirm password">
+       <!-- <button type="button" id="jqToggle">Show</button>--><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female <br><br>
+
+        <label>Interests:</label>
+        <input type="checkbox" name="HTML">HTML
+        <input type="checkbox" name="Python">Python
+        <input type="checkbox" name="CSS">CSS <br><br>
+
+        <label for="country">Country:</label>
+        <select id="country">
+            <option value="jp">Japan</option>
+            <option value="ph">Philippines</option>
+            <option value="us">United States</option>
+        </select><br><br>
+
+        <label for="charbox">Bio:</label><br>
+        <textarea id="charbox" rows="4" maxlength="50"></textarea>
+        <p id="count">0/50</p>
+        
+        <br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#jqToggle").click(function(){
+            let pwd = $("#pwd");
+            pwd.attr("type", pwd.attr("type")==="password" ? "text":"password");
+    });
+
+        $("#charbox").on("input", function(){
+            $("#count").text($(this).val().length + "/50");
+        });
+
+    $("#RegisterForm").submit(function(e){
+        let valid = true;
+
+        if($("#username").val()===""){ $("#username").addClass("error"); valid=false; } 
+            else { $("#username").removeClass("error"); }
+        if($("#email").val()===""){ $("#email").addClass("error"); valid=false; } 
+            else { $("#email").removeClass("error"); }
+        if($("#pwd").val()===""){ $("#pwd").addClass("error"); valid=false; } 
+            else { $("#pwd").removeClass("error"); }
+    
+      if(!valid){
+        alert("All required fields must be filled!");
+        e.preventDefault();
+      }
+    });
+    </script>
+</body>
+</html>
