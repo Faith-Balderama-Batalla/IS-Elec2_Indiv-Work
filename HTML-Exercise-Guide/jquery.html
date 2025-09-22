@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-box">
+        
+    </div>
+    
+    <script>
+        $("#demo").text("Hello jQuery!");
+
+        $("#box").css("background-color", "lightblue");
+
+        $("#btn").click(function(){ 
+            $("#demo").hide(); 
+        });
+
+        $("#btn").click(function(){ 
+            $("#demo").show(); 
+        }); 
+
+        $("#btn").click(function(){ 
+            $("#demo").toggle(); 
+        }); 
+
+        $("#demo").addClass("highlight");
+
+        $("#demo").removeClass("highlight"); 
+
+        $("#btn").click(function(){ 
+            $("#demo").toggleClass("highlight"); 
+        }); 
+
+        $("#myImg").attr("src", "new.jpg");
+
+        let val = $("#name").val(); 
+        console.log(val); 
+
+        $("#name").val("John Doe"); 
+
+        $("#demo").append(" Extra text!"); 
+
+        $("#demo").prepend("Start "); 
+
+        $("#box").fadeOut(); 
+
+        $("#box").fadeIn(); 
+
+        $("#panel").slideUp();
+
+        $("#panel").slideDown(); 
+
+        $("#demo").css({ 
+            "color": "white", 
+            "background-color": "black" 
+        });
+
+        $("#demo").mouseover(function(){ 
+            $(this).css("color", "red"); 
+        }); 
+
+        $("#demo").click(function(){ 
+            $(this).text("You clicked me!"); 
+        });
+        
+        
+    </script>
+</body>
+</html>
